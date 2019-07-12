@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" label="Job openings" max_length="40" name="x_354306_job_appli_job_openings" type="collection">
+        <element label="Department" mandatory="true" max_length="32" name="department" reference="x_354306_job_appli_department" type="reference"/>
+        <element label="Description" mandatory="true" max_length="500" name="description" type="string"/>
+        <element label="Job Due Date" mandatory="true" max_length="500" name="job_due_date" type="glide_date_time"/>
+        <element label="Job Post Date" mandatory="true" max_length="400" name="job_post_date" type="glide_date_time"/>
+        <element label="Job Title" mandatory="true" max_length="200" name="name" type="string"/>
+        <element attributes="omit_sys_original=true" label="New Currency" max_length="20" name="u_currency_2" type="currency"/>
+        <index name="index">
+            <element name="department"/>
+        </index>
+    </element>
+</database>

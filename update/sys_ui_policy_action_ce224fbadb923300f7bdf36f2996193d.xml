@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>application_status</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-07-01 14:20:29</sys_created_on>
+        <sys_id>ce224fbadb923300f7bdf36f2996193d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>application_status</sys_name>
+        <sys_package display_value="Job_application" source="x_354306_job_appli">e5db2a32dbd97300916a64d7489619dc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Job_application">e5db2a32dbd97300916a64d7489619dc</sys_scope>
+        <sys_update_name>sys_ui_policy_action_ce224fbadb923300f7bdf36f2996193d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-07-01 14:20:29</sys_updated_on>
+        <table>x_354306_job_appli_job_applications</table>
+        <ui_policy display_value="Hide stastus when activation status is inactive">19c10bbadb923300f7bdf36f2996199a</ui_policy>
+        <visible>false</visible>
+    </sys_ui_policy_action>
+</record_update>

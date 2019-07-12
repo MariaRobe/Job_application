@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Job applications" max_length="40" name="x_354306_job_appli_job_applications" type="collection">
+        <element choice="1" label="Activation Status" max_length="40" name="activation_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Active" value="0"/>
+                <element inactive_on_update="false" label="Inactive" value="1"/>
+            </choice>
+        </element>
+        <element choice="1" label="Application status" max_length="40" name="application_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Awaiting Response" sequence="100" value="0"/>
+                <element inactive_on_update="false" label="First Phase Intereview" sequence="200" value="1"/>
+                <element inactive_on_update="false" label="Approved" sequence="300" value="2"/>
+                <element inactive_on_update="false" label="Rejected" sequence="400" value="3"/>
+            </choice>
+        </element>
+        <element label="Created on" max_length="40" name="created_on" read_only="true" type="glide_date_time"/>
+        <element label="Department" max_length="32" name="department" reference="x_354306_job_appli_department" type="reference"/>
+        <element label="Job Due Date" max_length="32" name="job_due_date" read_only="true" reference_qual="javascript:&quot;job_due_date=&quot; + current.job_due_date" type="string" use_reference_qualifier="advanced"/>
+        <element label="Job Position" max_length="40" name="job_position_name" reference="x_354306_job_appli_job_openings" reference_qual="javascript:&quot;department=&quot; + current.department" type="reference" use_reference_qualifier="advanced"/>
+        <element label="Job Post Date" max_length="32" name="job_post_date" read_only="true" reference_qual="javascript:&quot;job_post_date=&quot; + current.job_post_date" type="string" use_reference_qualifier="advanced"/>
+        <element label="Motivation" mandatory="true" max_length="700" name="motivation" type="string"/>
+        <element label="e-mail" max_length="40" name="user_email" read_only="true" type="string"/>
+        <element label="First name" mandatory="true" max_length="32" name="user_name" reference="sys_user" type="reference"/>
+        <element label="Phone number" max_length="32" name="user_phone_number" read_only="true" type="string"/>
+        <index name="index">
+            <element name="user_email"/>
+        </index>
+        <index name="index2">
+            <element name="user_phone_number"/>
+        </index>
+        <index name="index3">
+            <element name="user_name"/>
+        </index>
+        <index name="index4">
+            <element name="job_due_date"/>
+        </index>
+        <index name="index5">
+            <element name="job_post_date"/>
+        </index>
+        <index name="index6">
+            <element name="department"/>
+        </index>
+    </element>
+</database>

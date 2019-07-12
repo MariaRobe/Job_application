@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>Find Ten Days Old Applications</name>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2019-05-15 17:56:29</run_start>
+        <run_time>1970-01-01 08:10:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[// Get today's time and date
+var rightNow = new GlideDateTime();
+
+// Query the database for Job Application records with submiting date less then 10 days.  
+// Only return Job Application records that do not have
+// their Appliation Status State field value of Approved or Rejected.
+var tenDaysFromNow = new GlideRecord('x_354306_job_appli_job_applications');
+// tenDaysFromNow.addQuery('created_on', '<' , rightNow );
+// tenDaysFromNow.addQuery('application_status','!=', 2);
+// tenDaysFromNow.addQuery('application_status','!=', 3);
+
+//edding the encoding query because we can't test the above code yet
+tenDaysFromNow.addEncodedQuery("created_on<=javascript:gs.endOfToday()^application_statusNOT IN2,3");
+tenDaysFromNow.query();
+
+// Write a log message for each overdue NeedIt Task Record
+while(tenDaysFromNow.next()){
+	//gs.info("Ten days has past since this application was made = " + tenDaysFromNow.number);
+	gs.eventQueue('x_354306_job_appli.tenDaysOldAppliations',tenDaysFromNow,tenDaysFromNow.user_name,"");
+	tenDaysFromNow.setValue('activation_status',"1");
+	tenDaysFromNow.update();
+}
+]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-15 18:06:31</sys_created_on>
+        <sys_id>f4f07d77db113300916a64d74896191e</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>Find Ten Days Old Applications</sys_name>
+        <sys_package display_value="Job_application" source="x_354306_job_appli">e5db2a32dbd97300916a64d7489619dc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Job_application">e5db2a32dbd97300916a64d7489619dc</sys_scope>
+        <sys_update_name>sysauto_script_f4f07d77db113300916a64d74896191e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-21 22:31:05</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

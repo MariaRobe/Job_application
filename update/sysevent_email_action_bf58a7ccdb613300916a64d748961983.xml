@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>false</action_insert>
+        <action_update>false</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>x_354306_job_appli_job_applications</collection>
+        <condition/>
+        <content_type>text/html</content_type>
+        <default_interval/>
+        <description>The application status updates after 10 days of submiting.</description>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digestable>false</digestable>
+        <event_name>x_354306_job_appli.tenDaysOldAppliations</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>event</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<p>&nbsp;</p>
+<p>Dear System Administrator,</p>
+<p>The application submitted by&nbsp;${user_name} is ten days old and the&nbsp;activation status is: ${activation_status}.</p>
+<p>You can set the activation status to active again by reviewing the record&nbsp;${URI} and evaluating the application.&nbsp;</p>
+<p>Further on, based by the applicant's qualifications you can choose some of the application status options (current status of this application is ${application_status}) and the system will accordingly notify&nbsp;the applicant.</p>
+<p>Thank you,</p>
+<p>HR Plat4mation</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Activation Status</name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields/>
+        <recipient_groups/>
+        <recipient_users>6816f79cc0a8016401c5a33be04be441</recipient_users>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>Application Status is updated</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-16 21:17:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bf58a7ccdb613300916a64d748961983</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Activation Status</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Job_application" source="x_354306_job_appli">e5db2a32dbd97300916a64d7489619dc</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Job_application">e5db2a32dbd97300916a64d7489619dc</sys_scope>
+        <sys_update_name>sysevent_email_action_bf58a7ccdb613300916a64d748961983</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-21 22:46:02</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
+        <type>email</type>
+        <weight>0</weight>
+    </sysevent_email_action>
+</record_update>
